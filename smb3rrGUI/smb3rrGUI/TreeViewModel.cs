@@ -130,6 +130,7 @@ namespace smb3rrGUI
             treeView.Add(fort);
             fort.Children.Add(new TreeViewModel("1-F"));
             fort.Children.Add(new TreeViewModel("2-F"));
+<<<<<<< HEAD
             fort.Children.Add(new TreeViewModel("World 3"));
             fort.Children[2].Children.Add(new TreeViewModel("3-F1"));
             fort.Children[2].Children.Add(new TreeViewModel("3-F2"));
@@ -138,6 +139,14 @@ namespace smb3rrGUI
             fort.Children[4].Children.Add(new TreeViewModel("5-F1"));
             fort.Children[4].Children.Add(new TreeViewModel("5-F2"));
             fort.Children.Add(new TreeViewModel("6-F2"));
+=======
+            for (int i = 3; i < 7; ++i)
+            {
+                fort.Children.Add(new TreeViewModel("World " + i.ToString()));
+                for (int j = 1; j < ((i == 6) ? 4 : 3); ++j)
+                    fort.Children[i - 1].Children.Add(new TreeViewModel(i.ToString() + "-F" + j.ToString()));
+            }
+>>>>>>> 8cc474898a26b8b3d4f4b8ea02594e7719bc2192
             fort.Children.Add(new TreeViewModel("7-F2"));
 
             TreeViewModel castle = new TreeViewModel("Castles");
