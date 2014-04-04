@@ -265,10 +265,10 @@ namespace smb3rr
         {
 
             // The full "seed" is a filename-safe, unpadded base64 string
-            fullSeed = fullSeed.Replace('-', '/');
-            if (fullSeed.Length % 4 != 0)
-                fullSeed = fullSeed.PadRight(fullSeed.Length + 4 - fullSeed.Length % 4, '=');
-            byte[] fullSeedData = Convert.FromBase64String(fullSeed);
+            string workingSeed = fullSeed.Replace('-', '/');
+            if (workingSeed.Length % 4 != 0)
+                workingSeed = workingSeed.PadRight(workingSeed.Length + 4 - workingSeed.Length % 4, '=');
+            byte[] fullSeedData = Convert.FromBase64String(workingSeed);
 
             // 1st 4 bytes are the actual PRNG seed
             prngSeed = 0;
@@ -293,7 +293,7 @@ namespace smb3rr
             else
             {
 
-                levelFlags = new bool?[77];
+                levelFlags = new bool?[74];
                 for (int i = 0; i < levelFlags.Length; ++i)
                 {
                     levelFlags[i] = true;
