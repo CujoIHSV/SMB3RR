@@ -130,12 +130,13 @@ namespace smb3rrGUI
             treeView.Add(fort);
             fort.Children.Add(new TreeViewModel("1-F"));
             fort.Children.Add(new TreeViewModel("2-F"));
-            for (int i = 3; i < 8; ++i)
+            for (int i = 3; i < 7; ++i)
             {
                 fort.Children.Add(new TreeViewModel("World " + i.ToString()));
                 for (int j = 1; j < ((i == 6) ? 4 : 3); ++j)
                     fort.Children[i - 1].Children.Add(new TreeViewModel(i.ToString() + "-F" + j.ToString()));
             }
+            fort.Children.Add(new TreeViewModel("7-F2"));
 
             TreeViewModel castle = new TreeViewModel("Castles");
             treeView.Add(castle);
