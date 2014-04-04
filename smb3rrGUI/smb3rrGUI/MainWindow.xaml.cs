@@ -70,6 +70,15 @@ namespace smb3rrGUI
             {
                 MessageBox.Show("Error: " + fnfExcept.FileName + " not found", "File Not Found", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            catch (ArgumentException argExcept)
+            {
+
+                if (argExcept.Message == "Empty path name is not legal.")
+                {
+                    MessageBox.Show("Error: You need to select a ROM to randomize", "No ROM file", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+            }
 
         }
 

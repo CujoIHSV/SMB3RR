@@ -29,7 +29,10 @@ other users can reproduce an identical ROM.
     --  8-1
     
 -   For various reasons, the following things cannot currently be randomized:
+    --  4-F2
     --  5-tower
+    --  6-F1
+    --  6-F3
     --  7-F1
     --  Anything in world 8 other than 8-1 and 8-2
     --  Mushroom houses
